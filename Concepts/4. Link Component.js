@@ -55,3 +55,35 @@ function Product(){
 export default Product;
 
 
+
+4. link to dynamic routes - localhost:3000/product/11
+
+import Link from "next/link";
+
+function Product(){
+  return (
+    <div>
+      <h1> This is Product page </h1>
+      <Link href={`product/${productId}`}>      // here "productId" represents dynamic ID
+        <a> Go to product ID </a>
+      </Link>
+    </div>
+  );
+}
+
+export default Product;
+
+
+all the above link components will push new URL in history array, so when we press back we will go to previous page.
+
+But in case if we dont want to push URL & want to replace current URL with new one, we can use replace keyword in that case.
+
+<Link href="/product" replace>   // here on click back button we will move to second last visited page. (replace keyword replaces current URL with new one)
+
+
+
+
+
+
+
+
