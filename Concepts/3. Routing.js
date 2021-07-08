@@ -29,3 +29,55 @@ Next Js has implemented their own routing mechanism.
     - in this case we need to create blog folder under pages folder. inside blog folder create index.js & first.js
     - pages/blog/index.js   - localhost:3000/blog
     - pages/blog/first.js   - localhost:3000/blog/first
+
+
+
+    - localhost:3000/product/1  - where 1 is a product id & it can change dynamically
+    - pages/product/index.js  - localhost:3000/product
+    - pages/product/[productId].js  - localhost:3000/product/1   - here [productId] will take dynamic id
+    
+    
+    to get dynamic id inside component, we can access it using below approach.
+    
+    import {useRouter} from 'next/Router';
+    
+    const router = useRouter();
+    const prodId = router.query.productId;    // this name should match with name we passed inside square brackets/ line no. 37
+
+
+
+
+    - localhost:3000/product/1/review/10
+    - pages/product/[productId]/review/[reviewId].js - localhost:3000/product/1/review/100   - here [id] will take dynamic id
+
+
+
+
+     -- Catch all routes
+     localhost:3000/docs/feature1/concept2, localhost:3000/docs/feature1, localhost:3000/docs/feature20/concept25, 
+
+    pages/docs/[...params].js   - here params will return an array which include complete URL.
+     
+     const router = useRouter();
+     const {params = []}  = router.query
+     console.log(params); // params[0] = feature1,  params[1] = concept2,   params.lenght = 2
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+
