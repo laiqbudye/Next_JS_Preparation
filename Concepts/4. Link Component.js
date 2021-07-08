@@ -95,3 +95,10 @@ function handleClick(){
   console.log("Placing your order");
   router.push("/product");      // we can also use router.replace("/product");   which will replace current URL
 }
+
+
+
+
+
+# if we try to access any route that is not handled then next js shows 404 error page by default.
+if we want to show our page then we need to create 404.js file under pages folder & inside that we can create our own component.
