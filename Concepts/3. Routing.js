@@ -61,23 +61,4 @@ Next Js has implemented their own routing mechanism.
      const router = useRouter();
      const {params = []}  = router.query
      console.log(params); // params[0] = feature1,  params[1] = concept2,   params.lenght = 2
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-
+   
