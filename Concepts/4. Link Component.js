@@ -85,5 +85,13 @@ But in case if we dont want to push URL & want to replace current URL with new o
 
 
 
+# How to navigate to another page programmatically (e.g on submitting the form or clicking the button)
 
-
+<button onClick={handleClick}> Place Order </button>
+ 
+ 
+const router = useRouter();
+function handleClick(){
+  console.log("Placing your order");
+  router.push("/product");      // we can also use router.replace("/product");   which will replace current URL
+}
