@@ -20,3 +20,12 @@ Next Js has implemented their own routing mechanism.
 
     - localhost:3000/about
     - to show this route we need to add about.js file under pages folder
+
+    
+    -- nested Routes
+    to render nested routes we need to nest its folders 
+    
+    - localhost:3000/blog/first  (nested Routes)
+    - in this case we need to create blog folder under pages folder. inside blog folder create index.js & first.js
+    - pages/blog/index.js   - localhost:3000/blog
+    - pages/blog/first.js   - localhost:3000/blog/first
