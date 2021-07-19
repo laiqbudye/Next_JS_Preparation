@@ -7,8 +7,19 @@ getStaticProp - is a async function.  it will run at build time in production. i
 e.g
 
 function UserList(props){    // here in props we are getting values those are returned by getStaticProps() function 
-  return <h1></h1>
+  return(
+      props.users.map(user => {
+        return(
+          <div> 
+            <p>{ user.name }</p>
+            <p>{ user.email }</p>
+          </div>
+        )
+      })
+  )
 }
+export default UserList
+
 
 export async function getStaticProps() {
   const response = await fetch('https://jsonplaceholder.typicode.com/users');
