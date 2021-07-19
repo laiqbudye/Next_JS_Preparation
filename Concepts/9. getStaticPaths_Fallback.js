@@ -42,3 +42,14 @@ Fallback
       
       so when user hits posts/6 for the first time it will show fallback UI until data gets fetched in the bg & when user hits same URL second time it will show actual content
       
+  
+   when to use?
+    - when we have large number of static pages that depends on data.
+    - a large e-commerce website
+   
+   
+   
+   
+   
+   
+   
