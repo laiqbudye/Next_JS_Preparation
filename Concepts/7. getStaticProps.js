@@ -35,3 +35,23 @@ export async function getStaticProps() {
     }
   }
 }
+
+
+-----------------------------------------------------------------------------------------------------------
+  
+  
+  getStaticProps- 
+  
+  this method also receive one argument called as context in which we can get details like post id or product id.
+  
+  async function getStaticProps(context) {
+    const { params } = context;
+    const response = await fetch(`https://jsonplaceholder.typicode.com/posts/${params.postId}`);     // postId is the name of route
+    const data = await response.json();
+    
+    return {
+      props: {
+        post: data  
+      }
+    }
+  }
