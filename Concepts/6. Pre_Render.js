@@ -1,6 +1,6 @@
 Next Js supports two types of rendering
 
-1. static generation
+1. static generation  (recommended method)
 2. server side rendering
 
 
