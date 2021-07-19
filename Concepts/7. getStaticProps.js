@@ -1,7 +1,10 @@
 in next js, all the pages are pre-rendered. but lets say if i want to fetch data from an API & based on API result i want to display HTML structure then in that case
 getStaticProp comes in picture.
 
-getStaticProp - is a async function.  it will run at build time in production. it should return something that gets passed as props to our component at build time.
+getStaticProp - is a async function.  
+                it runs only on server-side.
+                it will run at build time in production. 
+                it should return an object & that object should contain a props key which is an object.
 
 
 e.g
