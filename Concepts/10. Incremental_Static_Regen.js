@@ -30,4 +30,41 @@ the data then that change wont reflect as it will serve prevoiusly generated pag
 
 
 
-SO TO OVERCOME THIS PROBLEM INCREMENTAL STATIC GENERATION COMES IN PICTURE.
+SO TO OVERCOME THIS PROBLEM INCREMENTAL STATIC GENERATION (ISR) COMES IN PICTURE.
+
+Incremental Static Generation 
+     it allows you to update static pages after you have built your application.
+
+e.g
+
+  async function getStaticProps(context) {
+    const { params } = context;
+    const response = await fetch(`https://jsonplaceholder.typicode.com/posts/${params.postId}`);     // postId is the name of route
+    const data = await response.json();
+    
+    return {
+      props: {
+        post: data  
+      },
+      revalidate: 10                      // this is in seconds
+    }
+  }
+
+
+
+
+in the above example, revalidate: 10 means page will get regenerated after 10 seconds. so if there are any changes it will update the page.
+IMP: regeneration is only initiated if a user visits a page after the revalidate time. e.g if user visits our page at 2:00PM then it will regen at that time,  & user 
+      never visits that page after that then it wont regen that page.
+      
+      revalidate does not mean the page automatically re-generates after every 10 seconds. it regenerates when user visits that page after revalidate time.
+
+
+
+
+
+
+
+
+
+
