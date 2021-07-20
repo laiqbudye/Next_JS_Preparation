@@ -52,4 +52,17 @@ Fallback
    
    
    
-   
+  3. getStaticPaths fallback: 'blocking'
+    - the paths returned from getStaticPaths will be rendered to HTML at build time by getStaticProps.
+    
+     if fallback is set to 'blocking', then any path which is not returned by getStaticPaths will not show any fallback on the screen, it will fetch new data in the bg.
+      e.g if our getStaticPath returning path for posts 1, 2, 3 & user entered 4 then it wont show any fallback page.
+      
+    - then in the background, next.js will statically generate the requested path HTML & JSON. this includes running getStaticProps.
+  
+    - when thats done the browser receives the JSON which will be used to automatically render the page. from user point of view, the page will be swapped from 
+      blank page to full page.
+      
+      
+      when to use?
+        - sometimes people prefer the page to be loaded without a loading indicator if wait time is a few miliseconds. this helps avoid layout shift.
