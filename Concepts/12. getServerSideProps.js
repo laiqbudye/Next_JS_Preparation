@@ -61,3 +61,12 @@ export async function getServerSideProps(context) {
   }
 }
 
+
+
+here inside context argument we also get an access to incoming request & response
+
+context has 
+    params, req, res, query (which is an object containing key value pair of query params passed in URL)
+-------------------------------------------------------------------------------------------------------------
+  
+  
