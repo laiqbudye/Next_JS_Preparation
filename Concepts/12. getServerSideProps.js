@@ -41,3 +41,23 @@ so when user hit http://localhost:3000/articles then above getServerSideProps fu
 our function. then based on that data HTML will get generated for that page & sent back to the browser.
 
 this process will be time taking as compared to static site generation, so use it wisely.
+
+
+
+------------------------------------------------------------------------------------------------------------
+
+example to fetch data with dynamic category
+
+export async function getServerSideProps(context) {
+  const { params: { category }} = context;
+  const response = await fetch(`http://localhost:8000/news?category=${category}`);
+  const data = await response.json();
+  
+  return {
+    props: {
+      articles: data,
+      category
+    }
+  }
+}
+
