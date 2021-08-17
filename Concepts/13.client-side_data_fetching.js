@@ -38,16 +38,6 @@ function DashboardDataFetch () {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+Benefits:-
+  1. with this approach we dont need to play with react useEffect, then setting the loading flag to true or false... all these will be taken care by useSwr
+  2. when data gets updated on backend then we dont need to refresh our page to see latest changes, it will done automatically
