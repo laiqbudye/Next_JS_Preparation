@@ -28,7 +28,7 @@ function to get data programatically,
   }
 
 
-
+--------------------------------------------------------------------------------------------------------------------------------------------
 
 HANDLE A POST REQUEST
 
@@ -62,7 +62,37 @@ function to post data programatically,
 
 
 
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+HANDLING A DELETE REQUEST
+
+  filename:- pages/api/comments/[commentId].js                   // here commentId will be dynamic
+
+   export default function handler(req, res) {
+     const { commentId } = req.query;
+     
+     if(req.method === 'GET') {
+        res.status(200).json([{id: 1, data: 'hello world'}, {id: 2, data: 'this is beautiful'}])
+     } else if (req.method === 'DELETE') {
+        const deletedComment = comments.find((comment) => comment.id === parseInt(commenId));    // finding comment to be deleted
+       
+       const index = comments.findIndex((comment) => comment.id === parseInt(commenId));          // finding index of comment
+       
+       comments.splice(index, 1);
+       
+       res.status(200).json(deletedComment);
+     }
+   }
 
 
 
+function to delete data programatically,
+  
+  const deleteComment = async () => {
+    const response = await fetch('/api/comments/${commentId}', {        // post request
+        method: 'DELETE'
+    });     
+    
+    const data = await response.json();
+  }
 
