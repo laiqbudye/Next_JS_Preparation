@@ -96,3 +96,13 @@ function to delete data programatically,
     const data = await response.json();
   }
 
+
+  
+  -------------------------------------------------------------------------------------------------------------------------
+    
+   
+CATCH ALL API ROUTES
+
+  to catch all API routes we can make a file as
+    
+    pages/api/[...params].js                       // this route will catch all the unhandled routes
