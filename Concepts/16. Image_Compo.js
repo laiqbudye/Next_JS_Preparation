@@ -57,7 +57,7 @@ export default PetsPage
 
 
 Benefits with above approach,
-  - it will reduce the image size & then dwnload. for 2MB file it will reduce than to 30kb & then dwnload
+  - it will reduce the image size based on height & width specified & then dwnload. for 2MB file it will reduce than to 30kb & then dwnload
   - it supports lazy loading. (does not fetch all images at initial load, only fetches images which are visible to user on initial load & then based on scrolling it will make new requests)
   - even if we specify jpg image, it converts jpg to webp which is more optimized & faster
   - with placeholder= {blur} prop (this prop works with only dynamic images), it will render blur version of the image till the time actual image gets downloaded
