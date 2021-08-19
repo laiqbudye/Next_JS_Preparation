@@ -47,10 +47,25 @@ About.getLayout  = function PageLayout(page) {   // receives page automatically 
 }
 
 
+now make changes in _app.js file,
+  
+import Header from './components/Header';
+import Footer from './components/Footer';
+
+function MyApp({ Component, pageProps }) {
+  
+  if(Component.getLayout) {
+    return Component.getLayout(<Component {...pageProps} />)
+  }
+  
+  return (
+    <>
+      <Header />                       // here we are setting header on each n every page of app
+      <Component {...pageProps} />
+      <Footer />                      //  here we are setting footer on each n every page of app
+    </>
+  )
+}
 
 
-
-
-
-
-
+export default MyApp;
